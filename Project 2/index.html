@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-300">
+    <h1 class="font-bold text-center text-3xl p-4 uppercase text-indigo-900 drop-shadow-lg">Smart budget tracker</h1>
+    <div id="item-input" class="flex flex-col gap-2 text-left w-3/4 mt-5 justify-center my-0 mx-auto bg-indigo-900 p-5 rounded-2xl">
+        <label class="text-lg text-indigo-200 drop-shadow-lg font-sans tracking-wider font-medium">Item you spend on</label>
+        <input id="name" type="text" class="bg-indigo-300 rounded placeholder: pl-2 p-1" placeholder="Item name">
+
+        <label class="text-lg text-indigo-200 drop-shadow-lg font-sans tracking-wider font-medium">Price of item:</label>
+        <input id="price" type="number" class="bg-indigo-300 rounded placeholder: pl-2 p-1" placeholder="Item price">
+
+        <label class="text-lg text-indigo-200 drop-shadow-lg font-sans tracking-wider font-medium">Quantity of item:</label>
+        <input id="quantity" type="number" class="bg-indigo-300 rounded placeholder: pl-2 p-1" placeholder="Item quantity">
+
+        <label class="text-lg text-indigo-200 drop-shadow-lg font-sans tracking-wider font-medium">Category of item:</label>
+        <select name="category" id="category" class="bg-indigo-300 rounded p-1">
+            <option value="">Item Category</option>
+            <option value="electronic">Electronic</option>
+            <option value="food">Food</option>
+            <option value="transportation">Transportation</option>
+            <option value="fashion">Fashion</option>
+            <option value="miscellaneous">Miscellaneous</option>
+        </select>
+        <div id="buttons" class="my-0 mx-auto">
+            <button id="add-btn" class="bg-indigo-300 w-max p-1 rounded my-0 mx-auto px-3 mt-3">Add Item</button>
+            <button id="add-btn" class="bg-indigo-300 w-max p-1 rounded my-0 mx-auto px-3 mt-3" onclick="clearInput()">clear</button>
+        </div>
+    </div>
+    <h3 class="mt-20 font-bold text-3xl text-center mb-5 uppercase text-indigo-900 drop-shadow-lg">Item list</h3>
+    <div id="category-btn" class="flex gap-4 justify-center">
+        <button class="category-btn" data-input="all">All</button>
+        <button class="category-btn" data-input="electronic">Electronic</button>
+        <button class="category-btn" data-input="food">Food</button>
+        <button class="category-btn" data-input="transportation">Transportation</button>
+        <button class="category-btn" data-input="fashion">Fashion</button>
+        <button class="category-btn" data-input="miscellaneous">Miscellaneous</button>
+    </div>
+
+    <p id="totalItemPrice" class="bg-indigo-800 text-white py-2 px-4 ml-auto mr-8 rounded mt-6 w-fit font-bold"></p>
+    <div id="item-list" class="p-7 grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    <script src="script.js"></script>
+</body>
+</html>
