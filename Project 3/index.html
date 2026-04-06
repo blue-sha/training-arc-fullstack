@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Kanban Board</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <script src="script.js" defer></script>
+    <div class="flex min-h-screen">
+        <div class="w-64 bg-gray-400 border-r border-gray-200">
+            <button class="bg-gray-700 text-white px-3 py-1 mx-auto" onclick="addTask()">+ Add Task</button>
+        </div>
+
+        <div class="flex-1">
+            <div class="kanban-board grid grid-cols-3 gap-10 text-center uppercase font-bold text-xl min-h-screen">
+                <div class="column">
+                    <h2>To Do</h2>
+                    <div class="task-list" id="todo-list"></div>
+                </div>
+                <div class="column">
+                    <h2>Doing</h2>
+                    <div class="task-list" id="doing-list"></div>
+                </div>
+                <div class="column">
+                    <h2>Done</h2>
+                    <div class="task-list" id="done-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
